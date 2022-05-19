@@ -13,6 +13,40 @@ We need to write code that will query the meta data of an instance within AWS an
 
 Solution
 
+![alt text](https://github.com/nileshlg2003/assignment/blob/main/assets/3%20tier%20application.png?raw=true)
+
+THis stadard three tier application uses Managed instance groups which hosts the flask app. Managed Instance group will provide the auto healing, autoscaling cpabilities. We will also use the External load balancer to managed requests. A cloud SQL service with My SQL will be used as relation database. Secrets will hold all the databses secrets and can communicate with app.
+The infrastructure will be provisioned using Terraform module and provided startup script will deploy the application once the infrastructure is ready. An Optional Project creation module will help create and setup GCP project with Organisatoin, folder and necessary permissions. It will also enable necessary APIs
+
+1. Terraform Modules
+2. GCP Managed Instance Groups
+3. Load Balancers
+4. Cloud SQL
+5. VPC Networking
+6. Cloud Secrets
+7. Bash Script to install initial application
+8. Flask App
+
+## To do
+1. Implement CLoud Build for CI/CD Pipeline
+2. Implement Internal Load Balancer
+3. Implement Redis for Cache
+4. Cloud CDN
+
+## Steps
+```
+	1. Terraform Init
+
+```
+```
+	2. Terraform apply -auto-approve
+
+```
+3. find the URL / IP Adress form Load balancer in GCP console
+4. acces the frontend
+
+
+
 ## Approach 1 - 
 1. SSH in to VM 
 2. use the curl commands below to retrieve metadata from Vm instance
