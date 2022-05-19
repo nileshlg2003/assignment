@@ -39,10 +39,6 @@ function main() {
       console.log("specific object - Hostname")
         console.log(hostname); // ...Instance hostname
 
-      const data = await gcpMetadata.instance('service-accounts/default/email');
-      console.log(data); // ...Email address of the Compute identity service account
-
-
       const data = await gcpMetadata.instance({
         property: 'tags',
         params: { alt: 'text' }

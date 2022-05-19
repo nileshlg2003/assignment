@@ -1,0 +1,13 @@
+
+
+//SSH in to VM
+gcloud compute ssh --zone "<zone>" "<vm_insance>"  --tunnel-through-iap --project "<project_id>"
+
+//Retrieve Metadata of Vm Instance and project in Json format
+curl "http://metadata.google.internal/computeMetadata/v1/instance/" -H "Metadata-Flavor: Google"
+curl "http://metadata.google.internal/computeMetadata/v1/project/" -H "Metadata-Flavor: Google" 
+
+// Retrieve specific object from Metadata
+curl "http://metadata.google.internal/computeMetadata/v1/project/project-id" -H "Metadata-Flavor: Google"
+
+
